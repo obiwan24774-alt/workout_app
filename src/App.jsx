@@ -7,6 +7,12 @@ import RecordList from "./RecordList";
 function App() {
   const [count, setCount] = useState(0);
   const [records, setRecords] = useState([]);
+  const handleSave = (newRecord) => {
+    setRecords([
+      ...records,
+      { ...newRecord, date: new Date().toLocaleString("ja-JP") },
+    ]);
+  };
   const handleDelete = (index) => {
     setRecords(records.filter((_, i) => i !== index));
   };
