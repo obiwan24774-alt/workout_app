@@ -37,7 +37,13 @@ export default function RecordForm({ onSave }) {
   };
 
   return (
-    <form className="flex items-center justify-center bg-gray-100">
+    <form
+      className="flex items-center justify-center bg-gray-100"
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSave();
+      }}
+    >
       <div className="flex sm:items-center mb-6 flex-col sm:flex-row">
         {/* 共通レイアウト */}
         {[
@@ -93,7 +99,6 @@ export default function RecordForm({ onSave }) {
         <div className="flex mt-6">
           <button
             type="submit"
-            onSubmit={handleSave}
             className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
           >
             保存する

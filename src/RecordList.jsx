@@ -3,7 +3,7 @@ export default function RecordList({ records, onDelete }) {
     return <p className="text-center text-gray-500">記録はまだありません。</p>;
   }
   return (
-    <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+    <div>
       <h2 className="text-lg font-bold mb-2">記録一覧</h2>
       <ul className="divide-y divide-gray-200">
         {records.map((record, index) => (
