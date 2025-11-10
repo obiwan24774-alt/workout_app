@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import RecordForm from "./RecordForm";
@@ -6,11 +6,22 @@ import RecordListPage from "./RecordListPage";
 
 function App() {
   const [records, setRecords] = useState([]);
+  // ✅ 保存処理：records が更新されたら localStorage に保存
+  useEffect(() => {
+    localStorage.setItem("records", JSON.stringify(records));
+  }, [records]);
 
+  // ✅ 読み込み処理：初回レンダリング時に localStorage から取得
+  useEffect(() => {
+    const saved = localStorage.getItem("records");
+    if (saved) {
+      setRecords(JSON.parse(saved));
+    }
+  }, []);
   const handleSave = (newRecord) => {
     setRecords([
-      ...records,
       { ...newRecord, date: new Date().toLocaleString("ja-JP") },
+      ...records,
     ]);
   };
 
