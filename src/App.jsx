@@ -20,8 +20,8 @@ function App() {
 
   return (
     <Router>
-      <div className="relative h-screen overflow-hidden">
-        <div className="flex flex-col items-center pt-[15vh]">
+      <div>
+        <div className="relative h-screen flex flex-col items-center pt-[15vh]">
           <h1 className="text-blue-600 bg-white text-3xl font-bold mt-10">
             トレーニング記録
           </h1>
