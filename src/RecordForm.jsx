@@ -18,8 +18,20 @@ export default function RecordForm({ onSave }) {
 
   // 保存ボタンの処理（まだAPI接続なし）
   const handleSave = () => {
-    if (!formData.name || !formData.reps) {
-      alert("種目名と回数は必須です");
+    const { name, set, reps, weight } = formData;
+    if (!name || !reps || !set) {
+      alert("種目名・セット数・回数は必須です");
+      return;
+    }
+    if (
+      isNaN(Number(set)) ||
+      Number(set) < 1 ||
+      isNaN(Number(reps)) ||
+      Number(reps) < 1 ||
+      isNaN(Number(weight)) ||
+      Number(weight) < 0
+    ) {
+      alert("セット数・回数は１以上、重量は０以上の数値で入力してください");
       return;
     }
     console.log("保存データ:", formData);

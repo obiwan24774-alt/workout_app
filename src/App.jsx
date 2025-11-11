@@ -5,7 +5,10 @@ import RecordForm from "./RecordForm";
 import RecordListPage from "./RecordListPage";
 
 function App() {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState(() => {
+    const saved = localStorage.getItem("records");
+    return saved ? JSON.parse(saved) : [];
+  });
   // ✅ 保存処理：records が更新されたら localStorage に保存
   useEffect(() => {
     localStorage.setItem("records", JSON.stringify(records));
