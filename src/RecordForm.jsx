@@ -56,7 +56,7 @@ export default function RecordForm({ onSave }) {
         handleSave();
       }}
     >
-      <div className="flex sm:items-center mb-6 flex-col sm:flex-row">
+      <div className="flex items-center mb-9 flex-col w-full max-w-5xl p-6">
         {/* 共通レイアウト */}
         {[
           {
@@ -74,11 +74,8 @@ export default function RecordForm({ onSave }) {
             placeholder: "100",
           },
         ].map((item) => (
-          <div
-            key={item.name}
-            className="flex sm:items-center mb-6 flex-col sm:flex-row"
-          >
-            <label className="block sm:w-1/3 font-bold sm:text-right mb-1 pr-4">
+          <div key={item.name} className="flex sm:items-center mb-6 flex-col ">
+            <label className="inline-block font-bold  mb-1 pr-4">
               {item.label}
             </label>
             <input
@@ -92,7 +89,7 @@ export default function RecordForm({ onSave }) {
           </div>
         ))}
         {/* メモ */}
-        <div className="flex sm:items-center mb-6 flex-col sm:flex-row">
+        <div className="flex sm:items-center mb-6 flex-col ">
           <label
             className="block sm:w-1/3 font-bold sm:text-right mb-1 pr-4"
             htmlFor="notes"

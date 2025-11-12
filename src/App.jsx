@@ -35,8 +35,8 @@ function App() {
   return (
     <Router>
       <div>
-        <div className="relative h-screen flex flex-col items-center pt-[15vh]">
-          <h1 className="text-blue-600 bg-white text-3xl font-bold mt-10">
+        <div className="relative h-screen flex flex-col items-center pt-[5vh]">
+          <h1 className="text-blue-600 bg-white text-5xl font-bold mt-2">
             トレーニング記録
           </h1>
           <Routes>
@@ -52,7 +52,7 @@ function App() {
           <div className="mt-6 text-center">
             <Link
               to="/records"
-              className="mt-4 text-blue-500 hover:underline block text-center"
+              className="mt-2 text-blue-500 hover:underline block text-center"
             >
               記録一覧を見る
             </Link>
