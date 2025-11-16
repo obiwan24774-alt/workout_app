@@ -50,13 +50,13 @@ export default function RecordForm({ onSave }) {
 
   return (
     <form
-      className="flex items-center justify-center bg-gray-100"
+      className="flex items-center justify-center bg-gray-300 p-6 m-4"
       onSubmit={(e) => {
         e.preventDefault();
         handleSave();
       }}
     >
-      <div className="flex items-center mb-9 flex-col w-full max-w-5xl p-6">
+      <div className="flex items-center mb-2 flex-col w-full max-w-5xl p-6">
         {/* 共通レイアウト */}
         {[
           {
@@ -68,14 +68,14 @@ export default function RecordForm({ onSave }) {
           { label: "セット数*", name: "set", type: "text", placeholder: "3" },
           { label: "回数*", name: "reps", type: "number", placeholder: "10" },
           {
-            label: "重量(kg)*",
+            label: "重量(kg)",
             name: "weight",
             type: "number",
             placeholder: "100",
           },
         ].map((item) => (
-          <div key={item.name} className="flex sm:items-center mb-6 flex-col ">
-            <label className="inline-block font-bold  mb-1 pr-4">
+          <div key={item.name} className="flex sm:items-center mb-1 flex-col ">
+            <label className="w-32 font-bold text-left mr-4">
               {item.label}
             </label>
             <input
@@ -90,10 +90,7 @@ export default function RecordForm({ onSave }) {
         ))}
         {/* メモ */}
         <div className="flex sm:items-center mb-6 flex-col ">
-          <label
-            className="block sm:w-1/3 font-bold sm:text-right mb-1 pr-4"
-            htmlFor="notes"
-          >
+          <label className="w-32 font-bold text-left mr-4" htmlFor="notes">
             メモ
           </label>
           <textarea
@@ -105,7 +102,7 @@ export default function RecordForm({ onSave }) {
           />
         </div>
         {/* 保存ボタン */}
-        <div className="flex mt-6">
+        <div className="flex sm:w-2/3 mt-6">
           <button
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"

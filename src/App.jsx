@@ -36,7 +36,7 @@ function App() {
     <Router>
       <div>
         <div className="relative h-screen flex flex-col items-center pt-[5vh]">
-          <h1 className="text-blue-600 bg-white text-5xl font-bold mt-2">
+          <h1 className="text-green-600 bg-white text-5xl font-bold mt-2">
             トレーニング記録
           </h1>
           <Routes>

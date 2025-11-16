@@ -6,13 +6,13 @@ export default function RecordList({ records, onDelete }) {
     <div>
       <ul className="divide-y divide-gray-200">
         {records.map((record, index) => (
-          <li
+          <div
             key={index}
-            className="bg-white shadow-md rounded p-4 mb-4 w-full sm:w-2/3"
+            className="bg-white shadow-md rounded p-4 mb-4 w-full max-w-4xl"
           >
             <div className="mb-2 text-left">
               <h3 className="text-lg text-gray-500">記録日時: {record.date}</h3>
-              <span className="text-sm  font-bold text-blue-600 ">
+              <span className="text-lg  font-bold text-blue-400 ">
                 {record.name}
               </span>
             </div>
@@ -30,7 +30,7 @@ export default function RecordList({ records, onDelete }) {
             >
               削除
             </button>
-          </li>
+          </div>
         ))}
       </ul>
     </div>
