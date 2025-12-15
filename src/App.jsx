@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import RecordForm from "./RecordForm";
 import RecordListPage from "./RecordListPage";
+import HomePage from "./HomePage";
 
 // ✅ Routerの内側でlocationを使うためのラッパー
 function AppLayout({ records, handleSave, handleDelete }) {
