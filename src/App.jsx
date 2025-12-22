@@ -21,6 +21,10 @@ function AppLayout({ records, handleSave, handleDelete }) {
         トレーニング記録
       </h1>
       <Routes>
+        {/*ホーム画面*/}
+        <Route path="/" element={<HomePage />} />
+        {/* 記録入力 */}
+        <Route path="/form" element={<RecordForm onSave={handleDelete} />} />
         <Route path="/" element={<RecordForm onSave={handleSave} />} />
         <Route
           path="/records"
