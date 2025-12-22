@@ -17,9 +17,11 @@ function AppLayout({ records, handleSave, handleDelete }) {
 
   return (
     <div className="relative h-screen flex flex-col items-center pt-[5vh]">
-      <h1 className="text-green-600 bg-white text-5xl font-bold mt-2">
-        トレーニング記録
-      </h1>
+      {location.pathname !== "/" && (
+        <h1 className="text-green-600 bg-white text-5xl font-bold mt-2">
+          トレーニング記録
+        </h1>
+      )}
       <Routes>
         {/*ホーム画面*/}
         <Route path="/" element={<HomePage />} />
@@ -33,7 +35,7 @@ function AppLayout({ records, handleSave, handleDelete }) {
       </Routes>
 
       {/* ✅ /records以外のときだけリンク表示 */}
-      {location.pathname !== "/records" && (
+      {location.pathname !== "/" && (
         <div className="mt-6 text-center">
           <Link
             to="/records"
