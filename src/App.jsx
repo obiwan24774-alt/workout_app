@@ -18,30 +18,39 @@ function AppLayout({ records, handleSave, handleDelete }) {
   return (
     <div className="relative h-screen flex flex-col items-center pt-[5vh]">
       {location.pathname !== "/" && (
-        <h1 className="text-green-600 bg-white text-5xl font-bold mt-2">
-          トレーニング記録
-        </h1>
+        <>
+          <h1 className="text-green-600 bg-white text-5xl font-bold mt-2">
+            トレーニング記録
+          </h1>
+          <div className="mt-6 text-center">
+            <Link
+              to="/records"
+              className="mt-2 text-blue-500 hover:underline block text-center"
+            >
+              記録一覧を見る
+            </Link>
+          </div>
+        </>
       )}
+
       <Routes>
         {/*ホーム画面*/}
         <Route path="/" element={<HomePage />} />
         {/* 記録入力 */}
         <Route path="/form" element={<RecordForm onSave={handleDelete} />} />
-        <Route path="/" element={<RecordForm onSave={handleSave} />} />
+        {/* 記録一覧 */}
         <Route
           path="/records"
           element={<RecordListPage records={records} onDelete={handleDelete} />}
         />
       </Routes>
-
-      {/* ✅ /records以外のときだけリンク表示 */}
       {location.pathname !== "/" && (
         <div className="mt-6 text-center">
           <Link
-            to="/records"
-            className="mt-2 text-blue-500 hover:underline block text-center"
+            to="/"
+            className="px-6 py-3 bg-gray-500  text-white rounded-lg shadow hover:bg-600"
           >
-            記録一覧を見る
+            ホームに戻る
           </Link>
         </div>
       )}
